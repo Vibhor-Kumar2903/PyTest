@@ -1,4 +1,6 @@
+import json
 import pytest
+import os
 from datetime import datetime
 
 @pytest.hookimpl(tryfirst=True)
@@ -10,7 +12,16 @@ def pytest_configure(config):
 
 @pytest.fixture(scope='session', autouse=True)
 def setup_teardown():
-    print("Setting up resources...")
+    print("\nSetting up resources...")
     yield
-    print("Tearing down resources...")
+    print("\nTearing down resources...")
 
+
+# @pytest.fixture()
+def read_json(file_name):
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # directory where this .py file lives
+    file_path = os.path.join(base_dir, "data", file_name)
+    with open(file_path, "r", encoding="utf-8") as json_file:
+        payload = json.load(json_file)
+        print(payload)
+    return payload

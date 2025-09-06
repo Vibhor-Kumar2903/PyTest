@@ -15,5 +15,16 @@ class APIClient:
 
     def post(self, endpoint, payload):
         url = f"{self.base_url}/{endpoint}"
-        response = requests.get(url=url, headers=self.header, json=payload)
+        response = requests.post(url=url, headers=self.header, json=payload)
         return response
+
+    def put(self, endpoint, payload):
+        url = f"{self.base_url}/{endpoint}"
+        response = requests.put(url=url, headers=self.header, json=payload)
+        return response
+    
+    def delete(self, endpoint):
+        url = f"{self.base_url}/{endpoint}"
+        response = requests.put(url=url, headers=self.header)
+        return response
+
