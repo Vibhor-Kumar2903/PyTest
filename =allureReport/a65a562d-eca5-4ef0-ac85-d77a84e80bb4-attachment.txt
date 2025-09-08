@@ -1,0 +1,8 @@
+{'new_user': {'name': 'prasanth k', 'username': 'qa user', 'email': 'test_email@gmail.com'}}
+
+Payload :: 
+{'new_user': {'name': 'prasanth k', 'username': 'qa user', 'email': 'test_email@gmail.com'}}
+
+{'new_user': {'name': 'prasanth k', 'username': 'qa user', 'email': 'test_email@gmail.com'}, 'id': 10}
+
+Tearing down resources...
